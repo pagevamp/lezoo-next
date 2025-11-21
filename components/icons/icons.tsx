@@ -196,6 +196,51 @@ export const SmsIcon: React.FC<IconProps> = ({
   </svg>
 );
 
+export const HamburgerIcon: React.FC<IconProps> = ({
+  className,
+  width = 64,
+  height = 64,
+  alt = "Hamburger Icon",
+}) => (
+  <Image
+    src="/svg/hamburger.svg"
+    width={width}
+    height={height}
+    alt={alt}
+    className={className}
+  />
+);
+
+export const CloseIcon: React.FC<IconProps> = ({
+  className,
+  width = 64,
+  height = 64,
+  alt = "Close Icon",
+}) => (
+  <Image
+    src="/svg/close.svg"
+    width={width}
+    height={height}
+    alt={alt}
+    className={className}
+  />
+);
+
+export const DiscordBlueBg: React.FC<IconProps> = ({
+  className,
+  width = 64,
+  height = 64,
+  alt = "Close Icon",
+}) => (
+  <Image
+    src="/svg/discord-with-blue-bg.svg"
+    width={width}
+    height={height}
+    alt={alt}
+    className={className}
+  />
+);
+
 // Export all icons as a collection
 export const Icons = {
   ButtonArrowRight,
@@ -210,6 +255,9 @@ export const Icons = {
   Twitter,
   Tiktok,
   SmsIcon,
+  HamburgerIcon,
+  CloseIcon,
+  DiscordBlueBg,
 } as const;
 
 // Type for icon names

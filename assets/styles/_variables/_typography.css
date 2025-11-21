@@ -48,20 +48,25 @@
       @apply text-[16px] font-strawford font-medium leading-[1.4] tracking-[0.03em];
     }
 
+    .text-stroke {
+      -webkit-text-stroke: 3.05px var(--text-stroke-color, black);
+      text-stroke: 3.05px var(--text-stroke-color, black);
+    }
+
     .text-shadow-1 {
-      text-shadow: 4.57px 6.09px 0 var(--alabaster);
+      text-shadow: 4.57px 6.09px 0 var(--text-shadow-1-color, var(--alabaster));
     }
 
     .text-shadow-2 {
-      text-shadow: 8px 8px 1px var(--alabaster);
+      text-shadow: 8px 8px 1px var(--text-shadow-2-color, var(--alabaster));
     }
 
     .text-shadow-3 {
-      text-shadow: 5px 6px 1px var(--alabaster);
+      text-shadow: 5px 6px 1px var(--text-shadow-3-color, var(--alabaster));
     }
 
     .text-shadow-4 {
-      text-shadow: 3px 4px 0 var(--alabaster);
+      text-shadow: 3px 4px 0 var(--text-shadow-4-color, var(--alabaster));
     }
 
     @media (min-width: 768px) {
