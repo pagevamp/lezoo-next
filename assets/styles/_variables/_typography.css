@@ -13,6 +13,7 @@
     /* --font-atomic: var(--font-atomic); */
     --font-strawford: var(--font-strawford);
     --font-casa-grande: var(--font-casa-grande);
+    --font-atomic: var(--font-atomic);
 }
 
 @layer base {

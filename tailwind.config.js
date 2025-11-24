@@ -1,15 +1,20 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require("tailwindcss/plugin");
 
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,html}",
     "./components/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
+    "./modules/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       fontFamily: {
         heading: ['"Casagrandecasabau Ultra"', "Arial", "sans-serif"],
+      },
+      screens: {
+        'xl': '1025px',
       },
     },
     textShadow: {
