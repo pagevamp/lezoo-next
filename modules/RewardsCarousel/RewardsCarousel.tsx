@@ -7,7 +7,7 @@ export const RewardsCarousel = () => {
   const cards = [
     { image: '/images/zooblings.webp', label: 'Zooblings' },
     { image: '/images/skin&material.webp', label: 'Skins & Materials' },
-    { image: '/images/looks&parts.webp', label: 'Loot & Parts' },
+    { image: '/images/looks.webp', label: 'Loot & Parts' },
     { image: '/images/karma-gain.webp', label: 'Karma Gains + Offerings' },
     { image: '/images/discord-playtest.webp', label: 'Official Playtester Role + Channel Access' },
   ];
