@@ -1,6 +1,6 @@
 "use client";
 
-import { RightArrowWhite } from "@/components/Icons/Icons";
+import { RightArrowWhite } from "@/components/Icon/Icon";
 
 export const FiftyFiftySection = () => {
   const steps = [

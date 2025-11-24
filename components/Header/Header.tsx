@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { Button } from "../Button/Button";
-import { DownArrow, HamburgerIcon, CloseIcon, Instagram, Tiktok, Discord, Twitter } from "@/components/Icons/Icons";
+import { DownArrow, HamburgerIcon, CloseIcon, Instagram, Tiktok, Discord, Twitter } from "@/components/Icon/Icon";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);

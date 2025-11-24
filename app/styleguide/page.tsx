@@ -16,7 +16,7 @@ import {
   HamburgerIcon,
   CloseIcon,
   DiscordBlueBg,
-} from "@/components/Icons/Icons";
+} from "@/components/Icon/Icon";
 
 const guideNavigation = [
   {
