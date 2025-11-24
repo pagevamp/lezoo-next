@@ -25,11 +25,11 @@ export const ThreeCards = () => {
   return (
     <section className="w-full relative py-16 lg:py-24 overflow-hidden">
 
-      <div className='container-xl max-w-[1440px] mx-auto'>
+      <div className='container-xl max-w-[1400px] mx-auto'>
         {/* Background Image */}
         <div className="absolute -top-[6%] left-0 right-0 hidden lg:block w-full h-full">
         <img
-            src="/images/irl-back.webp"
+            src="/images/irl-background.webp"
             alt="IRL Prizes Background"
             className="w-full h-full"
           />
