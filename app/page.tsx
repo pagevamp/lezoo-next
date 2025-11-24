@@ -3,6 +3,7 @@ import { DiscordBlueBg } from "@/components/Icons/Icons";
 import { Overlay } from "@/components/Overlay/Overlay";
 import { Banner } from "@/modules/Banner/Banner";
 import Leadspace from "@/modules/Leadspace/Leadspace";
+import { RewardsCarousel } from "@/modules/RewardsCarousel/RewardsCarousel";
 import Image from "next/image";
 import type { CSSProperties } from "react";
 
@@ -18,6 +19,7 @@ export default function Home() {
         </a>
       </section>
       <Banner/>
+      <RewardsCarousel />
     </>
   );
 }

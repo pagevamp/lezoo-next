@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { casaGrande, strawFord } from "@/assets/fonts";
+import { casaGrande, strawFord, atomicMarker } from "@/assets/fonts";
 import { Header } from "@/components/Header/Header";
 import "./globals.css";
 import { Footer } from "@/components/Footer/Footer";
@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${casaGrande.variable} ${strawFord.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${casaGrande.variable} ${strawFord.variable} ${atomicMarker.variable} antialiased`}
       >
         <Header />
         <div className="bg-raisin-black-2">

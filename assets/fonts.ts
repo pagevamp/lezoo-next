@@ -1,11 +1,13 @@
 import localFont from "next/font/local";
-// export const atomicMarker = localFont({
-//   src: "../../public/fonts/atomic-marker/AtomicMarker.woff2",
-//   variable: "--font-atomic",
-//   weight: "400",
-//   preload: true,
-//   display: "swap",
-// });
+
+export const atomicMarker = localFont({
+  src: "../public/fonts/atomicmarker/AtomicMarker.woff2",
+  variable: "--font-atomic",
+  weight: "400",
+  preload: true,
+  display: "swap",
+});
+
 export const casaGrande = localFont({
   src: "../public/fonts/casagrande/casa-grande.woff2",
   variable: "--font-casa-grande",
