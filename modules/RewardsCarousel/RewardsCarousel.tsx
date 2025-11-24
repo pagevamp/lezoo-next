@@ -2,7 +2,6 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import styles from './RewardsCarousel.module.css';
 
 export const RewardsCarousel = () => {
   const cards = [
