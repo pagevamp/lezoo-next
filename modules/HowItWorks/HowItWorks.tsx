@@ -43,7 +43,7 @@ export const HowItWorks = () => {
         {/* Section Header */}
         <div className="text-center mb-12 lg:mb-16">
           <p className="text-blueberry h4 font-bold text-stroke mb-4">
-            LET'S SEE
+            LET&apos;S SEE
           </p>
           <h2 className="text-[45px] text-ivory mb-4 font-atomic">
             HOW IT WORKS
@@ -55,7 +55,7 @@ export const HowItWorks = () => {
           {steps.map((step, index) => (
             <>
               <div
-                key={index}
+                key={step.label}
                 className="flex flex-col items-center"
               >
                 {/* Step Label */}
@@ -164,8 +164,7 @@ export const HowItWorks = () => {
             variant="primary"
             buttonText="APPLY NOW"
             textColor="cloud-brust"
-          >
-          </Button>
+          />
         </div>
       </div>
     </section>
