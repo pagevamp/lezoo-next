@@ -15,52 +15,39 @@ import { LeftArrowCircled, RightArrowCircled } from "@/components/Icon/Icon";
 
 const roles = [
   {
+    title: "Exterminator",
+    tour: "Hard Hat Tour III",
+    image: "/images/exterminator.webp",
+  },
+  {
+    title: "Park Architect",
+    tour: "Hard Hat Tour III",
+    image: "/images/park-architect.webp",
+  },
+  {
+    title: "The Artist",
+    tour: "Hard Hat Tour III",
+    image: "/images/the-artist.webp",
+  },
+  {
     title: "Audio Alchemist",
-    tour: "Hard Hat Tour I",
-    image: "/images/zooblings.webp",
-    badge: "Sonic Support",
+    tour: "Hard Hat Tour III",
+    image: "/images/audio-alchemist.webp",
   },
   {
     title: "Cultural Catalyst",
-    tour: "Hard Hat Tour II",
-    image: "/images/pt-skip-the-line.webp",
-    badge: "Community",
-  },
-  {
-    title: "Mythic Cartographer",
     tour: "Hard Hat Tour III",
-    image: "/images/leadspace-strokes-2.webp",
-    badge: "World Building",
+    image: "/images/cultural-catalyst.webp",
   },
   {
-    title: "Combat Conductor",
-    tour: "Hard Hat Tour IV",
-    image: "/images/karma-gain.webp",
-    badge: "Gameplay",
+    title: "Explorer",
+    tour: "Hard Hat Tour III",
+    image: "/images/explorer.webp",
   },
   {
-    title: "Style Savant",
-    tour: "Hard Hat Tour V",
-    image: "/images/looks.webp",
-    badge: "Customization",
-  },
-  {
-    title: "Style Savant",
-    tour: "Hard Hat Tour V",
-    image: "/images/looks.webp",
-    badge: "Customization",
-  },
-  {
-    title: "Style Savant",
-    tour: "Hard Hat Tour V",
-    image: "/images/looks.webp",
-    badge: "Customization",
-  },
-  {
-    title: "Style Savant",
-    tour: "Hard Hat Tour V",
-    image: "/images/looks.webp",
-    badge: "Customization",
+    title: "The Maker",
+    tour: "Hard Hat Tour III",
+    image: "/images/the-maker.webp",
   },
 ];
 
@@ -91,7 +78,6 @@ export const RolesCarousel = () => {
         .park-role-swiper .swiper-slide {
           opacity: 0;
           pointer-events: none;
-          transition: opacity 0.5s ease-in-out;
         }
         .park-role-swiper .swiper-slide-active,
         .park-role-swiper .swiper-slide-prev,
@@ -131,7 +117,6 @@ export const RolesCarousel = () => {
                 grabCursor
                 loop
                 loopAdditionalSlides={5}
-                initialSlide={1}
                 speed={500}
                 watchSlidesProgress={true}
                 modules={[EffectCards, Pagination]}
@@ -191,7 +176,7 @@ export const RolesCarousel = () => {
               </div>
             </div>
 
-            <div className="park-role-pagination flex items-center justify-center gap-2 mt-4 static! w-auto!" />
+            <div className="park-role-pagination flex items-center justify-center mt-4 static! w-auto!" />
           </div>
 
           {/* Right Column - Text */}
