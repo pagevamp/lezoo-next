@@ -241,6 +241,36 @@ export const DiscordBlueBg: React.FC<IconProps> = ({
   />
 );
 
+export const FaqOpenArrow: React.FC<IconProps> = ({
+  className,
+  width = 24,
+  height = 24,
+  alt = "FAQ Open Arrow",
+}) => (
+  <Image
+    src="/images/faq-open-arrow.webp"
+    width={width}
+    height={height}
+    alt={alt}
+    className={className}
+  />
+);
+
+export const FaqCloseArrow: React.FC<IconProps> = ({
+  className,
+  width = 24,
+  height = 24,
+  alt = "FAQ Open Arrow",
+}) => (
+  <Image
+    src="/images/faq-close-arrow.webp"
+    width={width}
+    height={height}
+    alt={alt}
+    className={className}
+  />
+);
+
 // Export all icons as a collection
 export const Icons = {
   ButtonArrowRight,
@@ -258,6 +288,8 @@ export const Icons = {
   HamburgerIcon,
   CloseIcon,
   DiscordBlueBg,
+  FaqOpenArrow,
+  FaqCloseArrow,
 } as const;
 
 // Type for icon names

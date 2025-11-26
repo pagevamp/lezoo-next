@@ -16,6 +16,8 @@ import {
   HamburgerIcon,
   CloseIcon,
   DiscordBlueBg,
+  FaqOpenArrow,
+  FaqCloseArrow,
 } from "@/components/Icon/Icon";
 
 const guideNavigation = [
@@ -373,6 +375,26 @@ export default function Styleguide() {
                 </div>
                 <div className="text-center">
                   <p className="text-sm font-medium text-zinc-900">Close Icon</p>
+                  <p className="text-xs text-zinc-500">64×64</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-200 bg-white p-6 shadow-sm">
+                <div className="flex h-16 w-16 items-center justify-center rounded-md bg-zinc-100 text-white">
+                  <FaqOpenArrow width={48} height={48} />
+                </div>
+                <div className="text-center">
+                  <p className="text-sm font-medium text-zinc-900">FAQ Open Arrow</p>
+                  <p className="text-xs text-zinc-500">64×64</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-200 bg-white p-6 shadow-sm">
+                <div className="flex h-16 w-16 items-center justify-center rounded-md bg-zinc-100 text-white">
+                  <FaqCloseArrow width={48} height={48} />
+                </div>
+                <div className="text-center">
+                  <p className="text-sm font-medium text-zinc-900">FAQ Close Arrow</p>
                   <p className="text-xs text-zinc-500">64×64</p>
                 </div>
               </div>

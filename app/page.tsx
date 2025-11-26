@@ -7,6 +7,7 @@ import { HowItWorks } from "@/modules/HowItWorks/HowItWorks";
 import Leadspace from "@/modules/Leadspace/Leadspace";
 import { RewardsCarousel } from "@/modules/RewardsCarousel/RewardsCarousel";
 import { RolesCarousel } from "@/modules/RolesCarousel/RolesCarousel";
+import { TabbedFaq } from "@/modules/TabbedFaq/TabbedFaq";
 import { ThreeCards } from "@/modules/ThreeCards/ThreeCards";
 
 export default function Home() {
@@ -30,6 +31,7 @@ export default function Home() {
       <HowItWorks />
       <FiftyFiftySection />
       <RolesCarousel />
+      <TabbedFaq/>
     </>
   );
 }
