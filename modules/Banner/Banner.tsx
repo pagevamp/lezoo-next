@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export const Banner = () => {
   return (
     <section className="banner-section relative top-[-100px] lg:top-0">
@@ -30,10 +32,12 @@ export const Banner = () => {
             {/* Feature 1: Multi-player Mobile */}
             <div className="flex items-center text-center md:w-[45%] lg:w-auto max-w-[280px] gap-3">
               {/* Icon - Bunny */}
-              <div>
-                <img
+              <div className="w-10 h-10 relative flex-shrink-0">
+                <Image
                   src="/svg/bunny.svg"
                   alt="Multi-player Mobile"
+                  width={40}
+                  height={40}
                   className="w-10 h-10"
                 />
               </div>
@@ -45,10 +49,12 @@ export const Banner = () => {
             {/* Feature 2: Reveal Your Reality */}
             <div className="flex items-center justify-center text-center max-w-[280px] gap-3">
               {/* Icon - Door */}
-              <div>
-                <img
+              <div className="w-10 h-10 relative flex-shrink-0">
+                <Image
                   src="/svg/DOOR.svg"
                   alt="Reveal Your Reality"
+                  width={40}
+                  height={40}
                   className="w-10 h-10"
                 />
               </div>
@@ -60,10 +66,12 @@ export const Banner = () => {
             {/* Feature 3: Choose Your Path */}
             <div className="flex items-center text-center max-w-[280px] gap-3">
               {/* Icon - Eye */}
-              <div>
-                <img
+              <div className="w-10 h-10 relative flex-shrink-0">
+                <Image
                   src="/svg/eye.svg"
                   alt="Choose Your Path"
+                  width={40}
+                  height={40}
                   className="w-10 h-10"
                 />
               </div>
@@ -76,11 +84,13 @@ export const Banner = () => {
       </div>
 
       <div className="absolute min-h-[150%] w-[25%] top-[100px] lg:top-[-8px] left-0">
-        <img
+        <Image
           src="/images/playtest-banner-grafiti.webp"
           alt="What is Le Zoo Banner"
+          fill
           className="object-cover"
-          loading="lazy"
+          quality={75}
+          priority={false}
         />
       </div>
     </section>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
@@ -17,22 +18,28 @@ export const RewardsCarousel = () => {
 
       <div className='container-xl mx-auto'>
       {/* Background Image */}
-      <div className="absolute top-[8%] xl:top-[4%] left-0 right-0 hidden lg:block">
-        <img
+      <div className="absolute top-[8%] xl:top-[4%] left-0 right-0 hidden lg:block h-[600px]">
+        <Image
           src="/images/reward-bg.webp"
           alt="Rewards Background"
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
+          quality={70}
+          priority={false}
         />
       </div>
 
       {/* Duck Sticker - Top Right */}
       <div className="absolute top-[12px] right-8 lg:right-16 z-20 hidden lg:block">
         <div className="max-w-[337px] grid">
-          <div className='col-start-1 col-end-1 row-start-1 row-end-1'>
-            <img
+          <div className='col-start-1 col-end-1 row-start-1 row-end-1 relative w-[337px] h-[156px]'>
+            <Image
               src="/images/duck.webp"
               alt="Get Rewarded Duck"
-              className="w-full h-full"
+              fill
+              className="object-contain"
+              quality={85}
+              priority={false}
             />
           </div>
           <div className='col-start-1 col-end-1 row-start-1 row-end-1'>
@@ -72,11 +79,16 @@ export const RewardsCarousel = () => {
               key={index}
               className="flex flex-col items-center justify-center bg-space-cadet-2 rounded-2xl p-6 w-[240px] h-[336px]"
             >
-              <img
-                src={card.image}
-                alt={card.label}
-                className="w-full h-full object-contain mb-4"
-              />
+              <div className="relative w-full h-full mb-4">
+                <Image
+                  src={card.image}
+                  alt={card.label}
+                  fill
+                  className="object-contain"
+                  quality={85}
+                  sizes="240px"
+                />
+              </div>
               <p className="text-white text-body-text font-bold text-center">
                 {card.label}
               </p>
@@ -98,11 +110,16 @@ export const RewardsCarousel = () => {
             {[...cards, ...cards].map((card, index) => (
               <SwiperSlide key={index} className="flex justify-center !w-auto scale-[0.84] !transition-all duration-300 ease-in-out overflow-hidden [&.swiper-slide-active]:scale-100!">
                 <div className="flex flex-col items-center justify-center bg-space-cadet-2 rounded-2xl p-6 w-[215px] h-[336px]">
-                  <img
-                    src={card.image}
-                    alt={card.label}
-                    className="w-full h-full object-contain mb-4"
-                  />
+                  <div className="relative w-full h-full mb-4">
+                    <Image
+                      src={card.image}
+                      alt={card.label}
+                      fill
+                      className="object-contain"
+                      quality={85}
+                      sizes="215px"
+                    />
+                  </div>
                   <p className="text-white text-body-text font-bold text-center">
                     {card.label}
                   </p>
