@@ -5,7 +5,7 @@ export const Banner = () => {
     <section className="banner-section relative top-[-100px] lg:top-0">
 
       {/* Content Container */}
-      <div className="container-xl mx-auto px-6 py-6 grid items-center justify-center relative z-1">
+      <div className="container mx-auto px-6 py-6 grid items-center justify-center relative z-1">
 
         {/* Background Images - Responsive */}
         <div className="col-start-1 col-end-1 row-start-1 row-end-1">
@@ -84,13 +84,11 @@ export const Banner = () => {
       </div>
 
       <div className="absolute min-h-[150%] w-[25%] top-[100px] lg:top-[-8px] left-0">
-        <Image
+        <img
           src="/images/playtest-banner-grafiti.webp"
           alt="What is Le Zoo Banner"
-          fill
           className="object-cover"
-          quality={75}
-          priority={false}
+          loading="lazy"
         />
       </div>
     </section>

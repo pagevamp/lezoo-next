@@ -32,7 +32,7 @@ export const HowItWorks = () => {
 
   return (
     <section className="w-full relative py-16 lg:py-24">
-      <div className='container-xl max-w-[1440px] mx-auto'>
+      <div className='container max-w-[1440px] mx-auto'>
         <div className="px-6 relative z-10">
           {/* Section Header */}
           <div className="text-center mb-12 lg:mb-16">
