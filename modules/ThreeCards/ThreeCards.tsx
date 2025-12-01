@@ -1,6 +1,7 @@
 
 "use client";
 
+import Image from "next/image";
 import { Button } from '@/components/Button/Button';
 
 export const ThreeCards = () => {
@@ -25,7 +26,7 @@ export const ThreeCards = () => {
   return (
     <section className="w-full relative py-16 lg:py-24 overflow-hidden">
 
-      <div className='container-xl max-w-[1400px] mx-auto'>
+      <div className='container max-w-[1400px] mx-auto'>
         {/* Background Image */}
         <div className="absolute -top-[6%] left-0 right-0 hidden lg:block w-full h-full">
         <img
@@ -36,7 +37,7 @@ export const ThreeCards = () => {
         </div>
       </div>
 
-      <div className="container-xl mx-auto max-w-[1400px] px-6 relative z-10">
+      <div className="container mx-auto max-w-[1400px] px-6 relative z-10">
 
         {/* Section Header */}
         <div className="text-center mb-12 lg:mb-16">
@@ -60,13 +61,14 @@ export const ThreeCards = () => {
             >
               {/* Badge */}
               <div
-                className="relative mb-8"
+                className="relative mb-8 w-full h-[100px]"
                 style={{ transform: 'rotate(-0.4deg)' }}
               >
-                <img
+                <Image
                   src="/svg/bg-1.svg"
                   alt="Badge background"
-                  className="w-full max-w-[450px] xl:w-[335px]"
+                  fill
+                  className="object-contain"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <span className="text-white text-[29px] xl:text-[33px] font-atomic text-nowrap px-4">
@@ -76,11 +78,14 @@ export const ThreeCards = () => {
               </div>
 
               {/* Prize Image */}
-              <div className="mb-8 relative">
-                <img
+              <div className="mb-8 relative w-full h-[200px]">
+                <Image
                   src={prize.image}
                   alt={prize.text}
-                  className="w-full max-w-[300px] h-auto drop-shadow-xl"
+                  fill
+                  className="object-contain drop-shadow-xl"
+                  quality={85}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
               </div>
 

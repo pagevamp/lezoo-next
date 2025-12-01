@@ -41,18 +41,26 @@ export default function Leadspace() {
 
         <div className="w-full h-auto absolute bottom-[-14%]">
           <figure className="w-[80%] h-auto absolute bottom-0">
-            <img
+            <Image
               src="/images/leadspace-strokes-2.webp"
               alt="Le Zoo Stroke"
+              width={1200}
+              height={400}
               className="object-cover w-full h-full"
+              priority={false}
+              quality={75}
             />
           </figure>
 
           <figure className="w-[80%] h-auto absolute bottom-0 right-0">
-            <img
+            <Image
               src="/images/leadpace-strokes.webp"
               alt="Le Zoo Stroke"
+              width={1200}
+              height={400}
               className="object-cover w-full h-full"
+              priority={false}
+              quality={75}
             />
           </figure>
         </div>

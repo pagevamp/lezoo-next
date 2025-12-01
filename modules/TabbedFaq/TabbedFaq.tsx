@@ -150,7 +150,7 @@ export const TabbedFaq = () => {
 
   return (
     <section className="relative bg-raisin-black-2 py-16 lg:py-28">
-      <div className="container-xl mx-auto max-w-[1400px] px-6 relative z-10">
+      <div className="container mx-auto max-w-[1400px] px-6 relative z-10">
         {/* FAQ Heading - Always shown above tabs/content */}
         <div className="mb-8 lg:mb-12 lg:ps-[calc(25%+4rem)]">
           <div className="uppercase text-blueberry h2 text-stroke" style={{ textShadow: "4.57px 6.09px #eeebe2" }}>

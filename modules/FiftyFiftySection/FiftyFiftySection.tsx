@@ -11,7 +11,7 @@ export const FiftyFiftySection = () => {
 
   return (
     <section className="w-full relative z-1">
-      <div className="container-xl mx-auto max-w-[1400px] px-6 py-16 lg:py-24 xl:ps-[130px] xl:pe-[120px]">
+      <div className="container mx-auto max-w-[1400px] px-6 py-16 lg:py-24 xl:ps-[130px] xl:pe-[120px]">
         <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16">
 
           {/* Left Column - Illustration */}

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
@@ -15,7 +16,7 @@ export const RewardsCarousel = () => {
   return (
     <section className="relative w-full min-h-[800px] lg:min-h-[900px] pt-6 lg:pt-[140px] pb-16">
 
-      <div className='container-xl mx-auto'>
+      <div className='container mx-auto'>
       {/* Background Image */}
       <div className="absolute top-[8%] xl:top-[4%] left-0 right-0 hidden lg:block">
         <img
@@ -44,7 +45,7 @@ export const RewardsCarousel = () => {
       </div>
 
       {/* Content Container */}
-      <div className="container-xl mx-auto relative z-10">
+      <div className="container mx-auto relative z-10">
         {/* Title Section */}
         <div className="text-center mb-12 lg:mb-16 px-6">
           <h2 className="h1 text-blue-crayola mb-6 text-[60px] lg:text-[82px] font-bold text-shadow-1 text-stroke">
@@ -72,11 +73,16 @@ export const RewardsCarousel = () => {
               key={index}
               className="flex flex-col items-center justify-center bg-space-cadet-2 rounded-2xl p-6 w-[240px] h-[336px]"
             >
-              <img
-                src={card.image}
-                alt={card.label}
-                className="w-full h-full object-contain mb-4"
-              />
+              <div className="relative w-full h-full mb-4">
+                <Image
+                  src={card.image}
+                  alt={card.label}
+                  fill
+                  className="object-contain"
+                  quality={85}
+                  sizes="240px"
+                />
+              </div>
               <p className="text-white text-body-text font-bold text-center">
                 {card.label}
               </p>
@@ -98,11 +104,16 @@ export const RewardsCarousel = () => {
             {[...cards, ...cards].map((card, index) => (
               <SwiperSlide key={index} className="flex justify-center !w-auto scale-[0.84] !transition-all duration-300 ease-in-out overflow-hidden [&.swiper-slide-active]:scale-100!">
                 <div className="flex flex-col items-center justify-center bg-space-cadet-2 rounded-2xl p-6 w-[215px] h-[336px]">
-                  <img
-                    src={card.image}
-                    alt={card.label}
-                    className="w-full h-full object-contain mb-4"
-                  />
+                  <div className="relative w-full h-full mb-4">
+                    <Image
+                      src={card.image}
+                      alt={card.label}
+                      fill
+                      className="object-contain"
+                      quality={85}
+                      sizes="215px"
+                    />
+                  </div>
                   <p className="text-white text-body-text font-bold text-center">
                     {card.label}
                   </p>
