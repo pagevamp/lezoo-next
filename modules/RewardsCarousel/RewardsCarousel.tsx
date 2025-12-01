@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
@@ -16,30 +16,24 @@ export const RewardsCarousel = () => {
   return (
     <section className="relative w-full min-h-[800px] lg:min-h-[900px] pt-6 lg:pt-[140px] pb-16">
 
-      <div className='container-xl mx-auto'>
+      <div className='container mx-auto'>
       {/* Background Image */}
-      <div className="absolute top-[8%] xl:top-[4%] left-0 right-0 hidden lg:block h-[600px]">
-        <Image
+      <div className="absolute top-[8%] xl:top-[4%] left-0 right-0 hidden lg:block">
+        <img
           src="/images/reward-bg.webp"
           alt="Rewards Background"
-          fill
-          className="object-cover"
-          quality={70}
-          priority={false}
+          className="w-full h-full object-cover"
         />
       </div>
 
       {/* Duck Sticker - Top Right */}
       <div className="absolute top-[12px] right-8 lg:right-16 z-20 hidden lg:block">
         <div className="max-w-[337px] grid">
-          <div className='col-start-1 col-end-1 row-start-1 row-end-1 relative w-[337px] h-[156px]'>
-            <Image
+          <div className='col-start-1 col-end-1 row-start-1 row-end-1'>
+            <img
               src="/images/duck.webp"
               alt="Get Rewarded Duck"
-              fill
-              className="object-contain"
-              quality={85}
-              priority={false}
+              className="w-full h-full"
             />
           </div>
           <div className='col-start-1 col-end-1 row-start-1 row-end-1'>
@@ -51,7 +45,7 @@ export const RewardsCarousel = () => {
       </div>
 
       {/* Content Container */}
-      <div className="container-xl mx-auto relative z-10">
+      <div className="container mx-auto relative z-10">
         {/* Title Section */}
         <div className="text-center mb-12 lg:mb-16 px-6">
           <h2 className="h1 text-blue-crayola mb-6 text-[60px] lg:text-[82px] font-bold text-shadow-1 text-stroke">

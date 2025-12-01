@@ -26,21 +26,18 @@ export const ThreeCards = () => {
   return (
     <section className="w-full relative py-16 lg:py-24 overflow-hidden">
 
-      <div className='container-xl max-w-[1400px] mx-auto'>
+      <div className='container max-w-[1400px] mx-auto'>
         {/* Background Image */}
         <div className="absolute -top-[6%] left-0 right-0 hidden lg:block w-full h-full">
-          <Image
+        <img
             src="/images/irl-background.webp"
             alt="IRL Prizes Background"
-            fill
-            className="object-cover"
-            quality={70}
-            priority={false}
+            className="w-full h-full"
           />
         </div>
       </div>
 
-      <div className="container-xl mx-auto max-w-[1400px] px-6 relative z-10">
+      <div className="container mx-auto max-w-[1400px] px-6 relative z-10">
 
         {/* Section Header */}
         <div className="text-center mb-12 lg:mb-16">
