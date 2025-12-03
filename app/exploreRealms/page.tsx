@@ -206,16 +206,23 @@ export default function ExploreRealms() {
                 </div>
 
                 {/* Title Image */}
-                <div className="mb-6 flex justify-start ms-4 relative">
+                <div className="mb-6 flex items-start justify-between ms-4 me-2 lg:me-0 relative">
                   <Image
                     src={realm.titleImage}
                     alt={`${realm.id} title`}
                     width={280}
                     height={174}
-                    className="h-auto max-w-[254px] object-contain aspect-[254/156]"
+                    className="h-[156px] max-w-[254px] object-contain aspect-[254/156]"
                     priority={index < 3}
                     quality={85}
                     sizes="280px"
+                  />
+                  <Image
+                    src="/svg/caution.svg"
+                    alt="Caution icon"
+                    width={20}
+                    height={20}
+                    className="h-[26px] w-[30px]"
                   />
                 </div>
 
