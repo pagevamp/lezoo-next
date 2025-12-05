@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Explore Realms | Le Zoo",
-  description: "Discover the mystical realms of Le Zoo - from the Bright houses of Infinity and Jewels to the Dark depths of Central Hell. Explore unique worlds, each with its own story and secrets.",
+  description:
+    "Discover the mystical realms of Le Zoo - from the Bright houses of Infinity and Jewels to the Dark depths of Central Hell. Explore unique worlds, each with its own story and secrets.",
   keywords: [
     "Le Zoo Realms",
     "Gaming Worlds",
@@ -16,7 +17,8 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Explore Realms | Le Zoo",
-    description: "Discover the mystical realms of Le Zoo - from Bright to Dark, each world offers unique experiences and adventures.",
+    description:
+      "Discover the mystical realms of Le Zoo - from Bright to Dark, each world offers unique experiences and adventures.",
     type: "website",
     url: "https://lezoo.com/exploreRealms",
     images: [
@@ -38,5 +40,11 @@ export default function ExploreRealmsLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return (
+    <>
+      <main className="relative min-h-screen bg-gunmetal overflow-hidden">
+        {children}
+      </main>
+    </>
+  );
 }

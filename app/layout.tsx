@@ -4,6 +4,8 @@ import { casaGrande, strawFord, atomicMarker } from "@/assets/fonts";
 import { Header } from "@/components/Header/Header";
 import "./globals.css";
 import { Footer } from "@/components/Footer/Footer";
+import { Button } from "@/components/Button/Button";
+import { DiscordBlueBg } from "@/components/Icon/Icon";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,7 +21,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Playtest | Lezoo",
-  description: "Apply to become a playtester for Le Zoo where you can win rewards, be a part of an exclusive discord channel and impact how Le Zoo gets built!",
+  description:
+    "Apply to become a playtester for Le Zoo where you can win rewards, be a part of an exclusive discord channel and impact how Le Zoo gets built!",
   keywords: ["Le Zoo", "Playtest", "Gaming", "Mobile Game", "Beta Testing"],
   authors: [{ name: "Le Zoo Team" }],
   viewport: {
@@ -29,7 +32,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Playtest | Le Zoo",
-    description: "Join Le Zoo's playtest program. Win prizes, access exclusive Discord channels, and shape the future of the game!",
+    description:
+      "Join Le Zoo's playtest program. Win prizes, access exclusive Discord channels, and shape the future of the game!",
     type: "website",
     url: "https://lezoo.com",
     siteName: "Le Zoo",
@@ -65,6 +69,16 @@ export default function RootLayout({
       >
         <Header />
         <div className="bg-raisin-black-2">
+          <section className="fixed  top-[110px] md:top-[61px] right-[-10px] z-50 flex flex-col gap-10 justify-center items-center">
+            <Button variant="vertical" buttonText={"Playtest"} />
+            <a
+              href="#"
+              className="text-white hover:opacity-80 transition-opacity"
+              aria-label="Instagram"
+            >
+              <DiscordBlueBg className="w-[45px] h-[45px]" />
+            </a>
+          </section>
           {children}
         </div>
         <Footer />
