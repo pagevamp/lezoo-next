@@ -66,7 +66,7 @@ export const Header = () => {
                     <a href="#" className="block px-4 py-2 text-small text-white hover:text-green-apple transition-colors text-nowrap">
                       The 5 Guides
                     </a>
-                    <a href="#" className="block px-4 py-2 text-small text-white hover:text-green-apple transition-colors text-nowrap">
+                    <a href="/exploreRealms" className="block px-4 py-2 text-small text-white hover:text-green-apple transition-colors text-nowrap">
                       Explore Realms
                     </a>
                     <a href="#" className="block px-4 py-2 text-small text-white hover:text-green-apple transition-colors text-nowrap">
@@ -88,7 +88,7 @@ export const Header = () => {
                   <Image src="/images/hover.webp" alt="" fill />
                 </span>
               </a>
-              <a href="#" className="relative group text-small text-white transition-all">
+              <a href="/" className="relative group text-small text-white transition-all">
                 Playtest
                 <span className="absolute left-0 -bottom-1 w-full h-[3px] opacity-0 group-hover:opacity-100 transition-opacity">
                   <Image src="/images/hover.webp" alt="" fill />
@@ -142,7 +142,7 @@ export const Header = () => {
 
             {/* Menu Items */}
             <div className="flex flex-col gap-6 mt-12">
-              <a href="#" className="text-small text-green-apple hover:opacity-80 transition-opacity">
+              <a href="/" className="text-small text-green-apple hover:opacity-80 transition-opacity">
                 Playtest
               </a>
               <a href="#" className="text-small text-white hover:opacity-80 transition-opacity">
@@ -171,7 +171,7 @@ export const Header = () => {
                     <a href="#" className="text-small text-white hover:opacity-80 transition-opacity">
                       &gt; The 5 Guides
                     </a>
-                    <a href="#" className="text-small text-white hover:opacity-80 transition-opacity">
+                    <a href="/exploreRealms" className="text-small text-white hover:opacity-80 transition-opacity">
                       &gt; Explore Realms
                     </a>
                     <a href="#" className="text-small text-white hover:opacity-80 transition-opacity">

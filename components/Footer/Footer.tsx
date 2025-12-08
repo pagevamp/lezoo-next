@@ -11,16 +11,16 @@ export const Footer = () => {
         <div className="lg:hidden">
           {/* Social Icons - Top */}
           <div className="flex items-center gap-6 mb-12">
-            <a href="#" className="text-white hover:opacity-80 transition-opacity" aria-label="Instagram">
+            <a href="https://www.instagram.com/le.zoo.game/#" className="text-white hover:opacity-80 transition-opacity" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
               <Instagram className="w-6 h-6" />
             </a>
-            <a href="#" className="text-white hover:opacity-80 transition-opacity" aria-label="TikTok">
+            <a href="https://www.tiktok.com/@le.zoo.game" className="text-white hover:opacity-80 transition-opacity" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
               <Tiktok className="w-6 h-6" />
             </a>
-            <a href="#" className="text-white hover:opacity-80 transition-opacity" aria-label="Discord">
+            <a href="https://discord.com/invite/gXkydNGgW8" className="text-white hover:opacity-80 transition-opacity" aria-label="Discord" target="_blank" rel="noopener noreferrer">
               <Discord className="w-6 h-6" />
             </a>
-            <a href="#" className="text-white hover:opacity-80 transition-opacity" aria-label="Twitter">
+            <a href="https://x.com/LeZoogame" className="text-white hover:opacity-80 transition-opacity" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
               <Twitter className="w-6 h-6" />
             </a>
             <a href="#" className="text-white hover:opacity-80 transition-opacity" aria-label="Chat">
@@ -39,7 +39,7 @@ export const Footer = () => {
             <a href="#" className="text-white text-small hover:opacity-80 transition-opacity">
               House Quiz
             </a>
-            <a href="#" className="text-white text-small hover:opacity-80 transition-opacity">
+            <a href="/exploreRealms" className="text-white text-small hover:opacity-80 transition-opacity">
               Realms
             </a>
             <a href="#" className="text-white text-small hover:opacity-80 transition-opacity">
@@ -70,8 +70,9 @@ export const Footer = () => {
           <div className="text-white text-body-text mb-12">
             <p className="font-bold mb-2">Mail Box Address:</p>
             <p>223 Bedford Ave</p>
-            <p>#200</p>
-            <p>Brooklyn, 11211</p>
+            <p>#200, Brooklyn,</p>
+            <p>NY, 11211,</p>
+            <p>USA</p>
           </div>
 
           {/* Legal Links */}
@@ -109,8 +110,9 @@ export const Footer = () => {
             <div className="text-white text-body-text mb-12">
               <p className="font-bold mb-1">Mail Box Address:</p>
               <p>223 Bedford Ave</p>
-              <p>#200</p>
-              <p>Brooklyn, 11211</p>
+              <p>#200, Brooklyn,</p>
+              <p>NY, 11211,</p>
+              <p>USA</p>
             </div>
 
             {/* Legal Links */}
@@ -125,16 +127,16 @@ export const Footer = () => {
           <div className="flex flex-col items-start">
             {/* Social Icons */}
             <div className="flex items-center gap-6 mb-12">
-              <a href="#" className="text-white hover:opacity-80 transition-opacity" aria-label="Instagram">
+              <a href="https://www.instagram.com/le.zoo.game/#" className="text-white hover:opacity-80 transition-opacity" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
                 <Instagram className="w-6 h-6" />
               </a>
-              <a href="#" className="text-white hover:opacity-80 transition-opacity" aria-label="TikTok">
+              <a href="https://www.tiktok.com/@le.zoo.game" className="text-white hover:opacity-80 transition-opacity" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
                 <Tiktok className="w-6 h-6" />
               </a>
-              <a href="#" className="text-white hover:opacity-80 transition-opacity" aria-label="Discord">
+              <a href="https://discord.com/invite/gXkydNGgW8" className="text-white hover:opacity-80 transition-opacity" aria-label="Discord" target="_blank" rel="noopener noreferrer">
                 <Discord className="w-6 h-6" />
               </a>
-              <a href="#" className="text-white hover:opacity-80 transition-opacity" aria-label="Twitter">
+              <a href="https://x.com/LeZoogame" className="text-white hover:opacity-80 transition-opacity" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
                 <Twitter className="w-6 h-6" />
               </a>
               <a href="#" className="text-white hover:opacity-80 transition-opacity" aria-label="Chat">
@@ -153,7 +155,7 @@ export const Footer = () => {
               <a href="#" className="text-white text-small hover:opacity-80 transition-opacity">
                 House Quiz
               </a>
-              <a href="#" className="text-white text-small hover:opacity-80 transition-opacity">
+              <a href="/exploreRealms" className="text-white text-small hover:opacity-80 transition-opacity">
                 Realms
               </a>
               <a href="#" className="text-white text-small hover:opacity-80 transition-opacity">

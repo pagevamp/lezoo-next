@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Explore Realms | Le Zoo",
+  title: "The Realms | Le Zoo",
   description:
     "Discover the mystical realms of Le Zoo - from the Bright houses of Infinity and Jewels to the Dark depths of Central Hell. Explore unique worlds, each with its own story and secrets.",
   keywords: [
