@@ -13,6 +13,7 @@ export const RealmsSection = () => {
   const {
     data: realmsData,
     loading,
+    isLoadingMore,
     error,
     hasMore,
     loadMore,
@@ -40,7 +41,13 @@ export const RealmsSection = () => {
           {/* Error Message */}
           {error && (
             <div className="mb-6 ms-4 p-4 bg-red-500/20 border border-red-500 rounded text-red-200">
-              {error}
+              <p>{error}</p>
+              <button
+                onClick={() => window.location.reload()}
+                className="mt-2 text-sm underline"
+              >
+                Retry
+              </button>
             </div>
           )}
 
@@ -184,9 +191,10 @@ export const RealmsSection = () => {
                 <div className="flex justify-center mt-12">
                   <Button
                     variant="primary"
-                    buttonText="LOAD MORE"
+                    buttonText={isLoadingMore ? "LOADING..." : "LOAD MORE"}
                     textColor="cloud-brust"
                     onClick={loadMore}
+                    disabled={isLoadingMore}
                   />
                 </div>
               )}
