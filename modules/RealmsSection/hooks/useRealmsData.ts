@@ -35,6 +35,11 @@ type UseRealmsDataReturn = {
   isLoadingMore: boolean;
 };
 
+type ApiResponse = {
+  data: RealmCard[];
+  totalPages: string;
+};
+
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
 export const useRealmsData = (
@@ -45,7 +50,7 @@ export const useRealmsData = (
   const getKey = useCallback(
     (
       pageIndex: number,
-      previousPageData: { data?: RealmCard[]; totalPages?: string } | null
+      previousPageData: ApiResponse | null
     ) => {
       // Stop when previous page returned no data
       if (
@@ -75,6 +80,7 @@ export const useRealmsData = (
   } = useSWRInfinite(getKey, fetcher, {
     revalidateOnFocus: false,
     revalidateOnReconnect: false,
+    revalidateIfStale: false,
     dedupingInterval: 2000,
   });
 
@@ -87,25 +93,13 @@ export const useRealmsData = (
   const accumulatedData = useMemo(() => {
     if (!swrData) return [];
 
-    const allData: RealmCard[] = [];
-    const seenIds = new Set();
-
-    for (const page of swrData) {
+    return swrData.reduce<RealmCard[]>((acc, page) => {
       if (page?.data) {
-        const realmsArray = Array.isArray(page.data)
-          ? page.data
-          : page.data.realms || [];
-
-        realmsArray.forEach((item: RealmCard) => {
-          if (!seenIds.has(item.id)) {
-            seenIds.add(item.id);
-            allData.push(item);
-          }
-        });
+        const realmsArray = Array.isArray(page.data) ? page.data : page.data.realms || [];
+        return [...acc, ...realmsArray];
       }
-    }
-
-    return allData;
+      return acc;
+    }, []);
   }, [swrData]);
 
   // Get total pages from the first response

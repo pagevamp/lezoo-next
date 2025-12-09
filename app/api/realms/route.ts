@@ -1,11 +1,11 @@
 import { serverEnv } from "@/env/server.env";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(request: NextRequest) {
+export async function GET(request: NextRequest) : Promise<NextResponse<{ data: unknown; totalPages: string | null } | { error: string }>> {
   const searchParams = request.nextUrl.searchParams;
   const filterType = searchParams.get("type");
   const page = searchParams.get("page") || "1";
-  const perPage = searchParams.get("per_page") || "2";
+  const perPage = searchParams.get("per_page") || "6";
 
   const params = new URLSearchParams();
   params.append("page", page);
