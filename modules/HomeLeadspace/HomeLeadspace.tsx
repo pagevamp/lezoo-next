@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useState, type FormEvent } from 'react';
 import { SubmitSuccess, RightArrowDashBlue } from '@/components/Icon/Icon';
+import useMediaQuery from '@/hooks/useMediaQuery';
 
 const BACKGROUND_IMAGES = {
   desktop: 'https://dev-lezoowp.pantheonsite.io/wp-content/uploads/2025/12/hero-desktop-scaled.webp',
@@ -74,7 +75,7 @@ const EmailForm = ({ email, isSubmitted, hasError, onEmailChange, onSubmit, vari
             <input
               type="email"
               name="email"
-              id={`email-${variant}`}
+              id="customerio-email"
               value={email}
               onChange={(e) => onEmailChange(e.target.value)}
               placeholder={TEXT_CONTENT.form.placeholder}
@@ -86,6 +87,7 @@ const EmailForm = ({ email, isSubmitted, hasError, onEmailChange, onSubmit, vari
               required
               aria-label={TEXT_CONTENT.form.placeholder}
               autoComplete="email"
+              data-cio-form-field="email"
             />
           )}
 
@@ -117,6 +119,7 @@ export const HomeLeadspace = () => {
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [hasError, setHasError] = useState(false);
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -206,14 +209,16 @@ export const HomeLeadspace = () => {
                 {TEXT_CONTENT.panel.line2}
               </p>
 
-              <EmailForm
-                email={email}
-                isSubmitted={isSubmitted}
-                hasError={hasError}
-                onEmailChange={setEmail}
-                onSubmit={handleSubmit}
-                variant="desktop"
-              />
+              {isDesktop && (
+                <EmailForm
+                  email={email}
+                  isSubmitted={isSubmitted}
+                  hasError={hasError}
+                  onEmailChange={setEmail}
+                  onSubmit={handleSubmit}
+                  variant="desktop"
+                />
+              )}
             </div>
           </div>
         </div>
@@ -229,16 +234,18 @@ export const HomeLeadspace = () => {
             ))}
           </h1>
 
-          <div className="w-full max-w-[400px]">
-            <EmailForm
-              email={email}
-              isSubmitted={isSubmitted}
-              hasError={hasError}
-              onEmailChange={setEmail}
-              onSubmit={handleSubmit}
-              variant="mobile"
-            />
-          </div>
+          {!isDesktop && (
+            <div className="w-full max-w-[400px]">
+              <EmailForm
+                email={email}
+                isSubmitted={isSubmitted}
+                hasError={hasError}
+                onEmailChange={setEmail}
+                onSubmit={handleSubmit}
+                variant="mobile"
+              />
+            </div>
+          )}
         </div>
       </div>
     </section>
