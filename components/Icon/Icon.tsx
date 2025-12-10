@@ -271,6 +271,21 @@ export const FaqCloseArrow: React.FC<IconProps> = ({
   />
 );
 
+export const SubmitSuccess: React.FC<IconProps> = ({
+  className,
+  width = 24,
+  height = 24,
+  alt = "Success icon",
+}) => (
+  <Image
+    src="/svg/submit-sucess.svg"
+    width={width}
+    height={height}
+    alt={alt}
+    className={className}
+  />
+);
+
 // Export all icons as a collection
 export const Icons = {
   ButtonArrowRight,
@@ -290,6 +305,7 @@ export const Icons = {
   DiscordBlueBg,
   FaqOpenArrow,
   FaqCloseArrow,
+  SubmitSuccess,
 } as const;
 
 // Type for icon names
