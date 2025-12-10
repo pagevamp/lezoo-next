@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import { useState, type FormEvent } from 'react';
 import { SubmitSuccess, RightArrowDashBlue } from '@/components/Icon/Icon';
-import useMediaQuery from '@/hooks/useMediaQuery';
 
 const BACKGROUND_IMAGES = {
   desktop: 'https://dev-lezoowp.pantheonsite.io/wp-content/uploads/2025/12/hero-desktop-scaled.webp',
@@ -44,31 +43,30 @@ interface EmailFormProps {
   hasError: boolean;
   onEmailChange: (value: string) => void;
   onSubmit: (e: FormEvent) => void;
-  variant: 'desktop' | 'mobile';
 }
 
-const EmailForm = ({ email, isSubmitted, hasError, onEmailChange, onSubmit, variant }: EmailFormProps) => {
-  const isDesktop = variant === 'desktop';
-  const iconSize = isDesktop ? 40 : 32;
-  const backgroundSrc = isSubmitted
-    ? FORM_BACKGROUNDS[variant].success
-    : FORM_BACKGROUNDS[variant].default;
-
+const EmailForm = ({ email, isSubmitted, hasError, onEmailChange, onSubmit }: EmailFormProps) => {
   return (
     <form onSubmit={onSubmit} className="relative group transition-all duration-300">
       <div className="relative">
-        <Image
-          src={backgroundSrc}
-          alt=""
-          width={400}
-          height={isDesktop ? 70 : 64}
-          className="w-full h-auto"
-          aria-hidden="true"
-        />
+        <picture>
+          <source
+            media="(min-width: 1024px)"
+            srcSet={isSubmitted ? FORM_BACKGROUNDS.desktop.success : FORM_BACKGROUNDS.desktop.default}
+          />
+          <Image
+            src={isSubmitted ? FORM_BACKGROUNDS.mobile.success : FORM_BACKGROUNDS.mobile.default}
+            alt=""
+            width={400}
+            height={70}
+            className="w-full h-auto"
+            aria-hidden="true"
+          />
+        </picture>
 
-        <div className={`absolute inset-0 flex items-center justify-between ${isDesktop ? 'ps-8' : 'ps-6'} pe-2.5`}>
+        <div className="absolute inset-0 flex items-center justify-between ps-6 lg:ps-8 pe-2.5">
           {isSubmitted ? (
-            <span className={`flex-1 text-white font-strawford font-medium ${isDesktop ? 'text-[18px] lg:text-[20px]' : 'text-[16px]'}`}>
+            <span className="flex-1 text-white font-strawford font-medium text-[16px] lg:text-[20px]">
               {TEXT_CONTENT.form.successMessage}
             </span>
           ) : (
@@ -79,11 +77,7 @@ const EmailForm = ({ email, isSubmitted, hasError, onEmailChange, onSubmit, vari
               value={email}
               onChange={(e) => onEmailChange(e.target.value)}
               placeholder={TEXT_CONTENT.form.placeholder}
-              className={`flex-1 bg-transparent font-strawford font-medium outline-none ${
-                isDesktop
-                  ? 'text-alabaster text-[18px] lg:text-[20px] placeholder:text-white'
-                  : 'text-raisin-black-3 text-[20px] placeholder:text-raisin-black-3 px-3 py-2'
-              }`}
+              className="flex-1 bg-transparent font-strawford font-medium outline-none text-raisin-black-3 lg:text-alabaster text-[20px] lg:text-[18px] lg:lg:text-[20px] placeholder:text-raisin-black-3 lg:placeholder:text-white px-3 py-2 lg:px-0 lg:py-0"
               required
               aria-label={TEXT_CONTENT.form.placeholder}
               autoComplete="email"
@@ -98,16 +92,16 @@ const EmailForm = ({ email, isSubmitted, hasError, onEmailChange, onSubmit, vari
             disabled={isSubmitted}
           >
             {isSubmitted ? (
-              <SubmitSuccess width={iconSize} height={iconSize} className={`w-${iconSize / 4} h-${iconSize / 4}`} />
+              <SubmitSuccess width={40} height={40} className="w-8 h-8 lg:w-10 lg:h-10" />
             ) : (
-              <RightArrowDashBlue width={iconSize} height={iconSize} className={`w-${iconSize / 4} h-${iconSize / 4}`} />
+              <RightArrowDashBlue width={40} height={40} className="w-8 h-8 lg:w-10 lg:h-10" />
             )}
           </button>
         </div>
       </div>
 
       {hasError && (
-        <p className={`text-red-500 text-center mt-2 font-strawford font-medium ${isDesktop ? 'text-[16px]' : 'text-[14px]'}`}>
+        <p className="text-red-500 text-center mt-2 font-strawford font-medium text-[14px] lg:text-[16px]">
           {TEXT_CONTENT.form.errorMessage}
         </p>
       )}
@@ -119,7 +113,6 @@ export const HomeLeadspace = () => {
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [hasError, setHasError] = useState(false);
-  const isDesktop = useMediaQuery('(min-width: 1024px)');
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -178,7 +171,7 @@ export const HomeLeadspace = () => {
       />
 
       {/* Main Content Container */}
-      <div className="relative h-full flex items-end lg:items-center">
+      <div className="relative h-full flex items-end md:items-center md:justify-end md:w-fit md:ml-auto lg:w-full ">
         {/* Desktop Layout: Right Side Content */}
         <div className="hidden lg:block absolute right-[14%] top-[58%] -translate-y-1/2 w-[600px]">
           <h1 className="h1 text-alabaster text-stroke text-shadow-2 mb-6" style={textStrokeStyle}>
@@ -193,38 +186,35 @@ export const HomeLeadspace = () => {
           </h1>
 
           {/* Dark Paper Panel */}
-          <div className="relative w-full max-w-[507px] h-[227px] ml-auto left-[30px]">
+          <div className="relative w-full max-w-[507px] ml-auto left-[30px]">
             <Image
               src={BACKGROUND_IMAGES.panel}
               alt=""
               width={507}
-              height={225}
-              className="w-full h-full object-cover"
+              height={280}
+              className="w-full h-auto"
               aria-hidden="true"
             />
 
             <div className="absolute inset-0 flex flex-col px-12 py-8">
-              <p className="text-alabaster text-[20px] lg:text-[24px] font-strawford mb-4 font-bold leading-[129%]">
+              <p className="text-alabaster text-[20px] lg:text-[24px] font-strawford font-bold leading-[129%] mb-4">
                 {TEXT_CONTENT.panel.line1}<br />
                 {TEXT_CONTENT.panel.line2}
               </p>
 
-              {isDesktop && (
-                <EmailForm
-                  email={email}
-                  isSubmitted={isSubmitted}
-                  hasError={hasError}
-                  onEmailChange={setEmail}
-                  onSubmit={handleSubmit}
-                  variant="desktop"
-                />
-              )}
+              <EmailForm
+                email={email}
+                isSubmitted={isSubmitted}
+                hasError={hasError}
+                onEmailChange={setEmail}
+                onSubmit={handleSubmit}
+              />
             </div>
           </div>
         </div>
 
         {/* Mobile Layout: Bottom Centered */}
-        <div className="flex lg:hidden flex-col items-center justify-end md:items-end md:justify-center w-full pb-12 px-2.5 h-[80vh]">
+        <div className="lg:hidden flex flex-col items-center justify-end w-full pb-12 px-2.5">
           <h1 className="h1 text-alabaster text-stroke text-shadow-2 text-center mb-4" style={textStrokeStyle}>
             {TEXT_CONTENT.heading.mobile.lines.map((line, index) => (
               <span key={index}>
@@ -234,18 +224,15 @@ export const HomeLeadspace = () => {
             ))}
           </h1>
 
-          {!isDesktop && (
-            <div className="w-full max-w-[400px]">
-              <EmailForm
-                email={email}
-                isSubmitted={isSubmitted}
-                hasError={hasError}
-                onEmailChange={setEmail}
-                onSubmit={handleSubmit}
-                variant="mobile"
-              />
-            </div>
-          )}
+          <div className="w-full max-w-[400px]">
+            <EmailForm
+              email={email}
+              isSubmitted={isSubmitted}
+              hasError={hasError}
+              onEmailChange={setEmail}
+              onSubmit={handleSubmit}
+            />
+          </div>
         </div>
       </div>
     </section>
