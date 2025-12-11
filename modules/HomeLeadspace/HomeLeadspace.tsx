@@ -1,8 +1,9 @@
 "use client";
 
 import Image from 'next/image';
-import { useState, type FormEvent } from 'react';
+import { useState, useEffect, type FormEvent } from 'react';
 import { SubmitSuccess, RightArrowDashBlue } from '@/components/Icon/Icon';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 const BACKGROUND_IMAGES = {
   desktop: 'https://dev-lezoowp.pantheonsite.io/wp-content/uploads/2025/12/hero-desktop-scaled.webp',
@@ -113,6 +114,13 @@ export const HomeLeadspace = () => {
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [hasError, setHasError] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
+
+  // Ensure component only renders after mounting to avoid hydration mismatch
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -146,6 +154,11 @@ export const HomeLeadspace = () => {
     '--text-shadow-2-color': 'black'
   } as React.CSSProperties;
 
+  // Prevent hydration mismatch by not rendering until client-side mount
+  if (!hasMounted) {
+    return null;
+  }
+
   return (
     <section className="w-full h-[80vh] md:h-screen relative overflow-hidden">
       {/* Background Images */}
@@ -172,36 +185,60 @@ export const HomeLeadspace = () => {
 
       {/* Main Content Container */}
       <div className="relative h-full flex items-end md:items-center md:justify-end md:w-fit md:ml-auto lg:w-full ">
-        {/* Desktop Layout: Right Side Content */}
-        <div className="hidden lg:block absolute right-[14%] top-[58%] -translate-y-1/2 w-[600px]">
-          <h1 className="h1 text-alabaster text-stroke text-shadow-2 mb-6" style={textStrokeStyle}>
-            <span className="flex items-start justify-end gap-2">
-              <span className="text-[45px] leading-[98%]">{TEXT_CONTENT.heading.desktop.prefix}</span>
-              <span className="flex flex-col">
-                {TEXT_CONTENT.heading.desktop.lines.map((line, index) => (
-                  <span key={index}>{line}</span>
-                ))}
+        {isDesktop ? (
+          /* Desktop Layout: Right Side Content */
+          <div className="absolute right-[14%] top-[58%] -translate-y-1/2 w-[600px]">
+            <h1 className="h1 text-alabaster text-stroke text-shadow-2 mb-6" style={textStrokeStyle}>
+              <span className="flex items-start justify-end gap-2">
+                <span className="text-[45px] leading-[98%]">{TEXT_CONTENT.heading.desktop.prefix}</span>
+                <span className="flex flex-col">
+                  {TEXT_CONTENT.heading.desktop.lines.map((line, index) => (
+                    <span key={index}>{line}</span>
+                  ))}
+                </span>
               </span>
-            </span>
-          </h1>
+            </h1>
 
-          {/* Dark Paper Panel */}
-          <div className="relative w-full max-w-[507px] ml-auto left-[30px]">
-            <Image
-              src={BACKGROUND_IMAGES.panel}
-              alt=""
-              width={507}
-              height={280}
-              className="w-full h-auto"
-              aria-hidden="true"
-            />
+            {/* Dark Paper Panel */}
+            <div className="relative w-full max-w-[507px] ml-auto left-[30px]">
+              <Image
+                src={BACKGROUND_IMAGES.panel}
+                alt=""
+                width={507}
+                height={280}
+                className="w-full h-auto"
+                aria-hidden="true"
+              />
 
-            <div className="absolute inset-0 flex flex-col px-12 py-8">
-              <p className="text-alabaster text-[20px] lg:text-[24px] font-strawford font-bold leading-[129%] mb-4">
-                {TEXT_CONTENT.panel.line1}<br />
-                {TEXT_CONTENT.panel.line2}
-              </p>
+              <div className="absolute inset-0 flex flex-col px-12 py-8">
+                <p className="text-alabaster text-[20px] lg:text-[24px] font-strawford font-bold leading-[129%] mb-4">
+                  {TEXT_CONTENT.panel.line1}<br />
+                  {TEXT_CONTENT.panel.line2}
+                </p>
 
+                <EmailForm
+                  email={email}
+                  isSubmitted={isSubmitted}
+                  hasError={hasError}
+                  onEmailChange={setEmail}
+                  onSubmit={handleSubmit}
+                />
+              </div>
+            </div>
+          </div>
+        ) : (
+          /* Mobile Layout: Bottom Centered */
+          <div className="flex flex-col items-center justify-end w-full pb-12 px-2.5">
+            <h1 className="h1 text-alabaster text-stroke text-shadow-2 text-center mb-4" style={textStrokeStyle}>
+              {TEXT_CONTENT.heading.mobile.lines.map((line, index) => (
+                <span key={index}>
+                  {line}
+                  {index < TEXT_CONTENT.heading.mobile.lines.length - 1 && <br />}
+                </span>
+              ))}
+            </h1>
+
+            <div className="w-full max-w-[400px]">
               <EmailForm
                 email={email}
                 isSubmitted={isSubmitted}
@@ -211,29 +248,7 @@ export const HomeLeadspace = () => {
               />
             </div>
           </div>
-        </div>
-
-        {/* Mobile Layout: Bottom Centered */}
-        <div className="lg:hidden flex flex-col items-center justify-end w-full pb-12 px-2.5">
-          <h1 className="h1 text-alabaster text-stroke text-shadow-2 text-center mb-4" style={textStrokeStyle}>
-            {TEXT_CONTENT.heading.mobile.lines.map((line, index) => (
-              <span key={index}>
-                {line}
-                {index < TEXT_CONTENT.heading.mobile.lines.length - 1 && <br />}
-              </span>
-            ))}
-          </h1>
-
-          <div className="w-full max-w-[400px]">
-            <EmailForm
-              email={email}
-              isSubmitted={isSubmitted}
-              hasError={hasError}
-              onEmailChange={setEmail}
-              onSubmit={handleSubmit}
-            />
-          </div>
-        </div>
+        )}
       </div>
     </section>
   );
